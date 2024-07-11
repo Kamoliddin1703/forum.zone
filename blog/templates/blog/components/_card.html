@@ -1,0 +1,18 @@
+<a href="{{ article.get_absolute_url }}" style="text-decoration:none;">
+<div class="card h-100 text-dark">
+    {% if article.photo %}
+    <img src="{{ article.photo.url }}" class="card-img-top" alt="..."  height="300px">
+    {% else %}
+    <img src="https://metliefdegeregeld.nl/wp-content/uploads/2017/12/300x200-300dpi.jpg" class="card-img-top" alt="...">
+    {% endif %}
+    <div class="card-body d-flex flex-column justify-content-between">
+        <span class="small text-danger fw-bold fs-5">{{ article.category }}</span>
+        <h5 class="card-title">{{ article.title }}</h5>
+        <p class="card-text">{{ article.content|truncatechars:80 }}</p>
+        <div class="d-flex justify-content-between">
+            <span class="small">{{ article.created_at }}</span>
+            <p class="card-text">{{ article.views }} <i class="bi bi-eye-fill"></i></p>
+        </div>
+    </div>
+</div>
+</a>
